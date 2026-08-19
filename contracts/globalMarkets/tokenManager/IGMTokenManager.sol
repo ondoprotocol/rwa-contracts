@@ -17,6 +17,11 @@
 
 pragma solidity ^0.8.4;
 
+import {IOndoIDRegistry} from "contracts/xManager/interfaces/IOndoIDRegistry.sol";
+import {
+  IOndoSanityCheckOracle
+} from "contracts/globalMarkets/tokenManager/sanityCheckOracle/IOndoSanityCheckOracle.sol";
+
 /**
  * @title  IGMTokenManager
  * @author Ondo Finance
@@ -95,4 +100,8 @@ interface IGMTokenManager {
   ) external returns (uint256 redemptionUSDonValue);
 
   function gmTokenAccepted(address token) external view returns (bool);
+
+  function ondoIDRegistry() external view returns (IOndoIDRegistry);
+
+  function sanityCheckOracle() external view returns (IOndoSanityCheckOracle);
 }
