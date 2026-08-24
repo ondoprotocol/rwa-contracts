@@ -13,6 +13,7 @@ and audit in one place.
 | USDY | US Dollar Yield token: USDY variants (blocklist/sanctions/allowlist), rUSDY (rebasing wrapper), manager, and compliance components. |
 | xManager | Nexus unified RWA mint/redeem system: instant managers (OUSG, USDY), token router, token sources/recipients, compliance, ID registry, oracles, rate limiter. |
 | Global Markets | Tokenized equities platform: GMToken, USDon (+ manager/converter), token factory and registrars, token manager with issuance hours and sanity-check oracle, compliance, pause manager. |
+| Portfolio Tokens | Baskets of Global Markets tokens: portfolio token manager (attestation-based mint/redeem), token factory and registrar, orchestrator (invests/divests into underlying GM tokens), vault, and fee engine. |
 
 Shared infrastructure (RWAHub base contracts, pricing, KYC client, interfaces)
 and vendored third-party dependencies (`contracts/external/`) are included as
