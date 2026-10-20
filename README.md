@@ -15,6 +15,7 @@ and audit in one place.
 | Global Markets | Tokenized equities platform: GMToken, USDon (+ manager/converter), token factory and registrars, token manager with issuance hours and sanity-check oracle, compliance, pause manager. |
 | Portfolio Tokens | Baskets of Global Markets tokens: portfolio token manager (attestation-based mint/redeem), token factory and registrar, orchestrator (invests/divests into underlying GM tokens), vault, and fee engine. |
 | Limit Orders | On-chain limit orders for Global Markets and Portfolio tokens: shared order base/library/storage and the GMTokenLimitOrder and PortfolioTokenLimitOrder executors. |
+| Continuous Price Oracle | Price oracles for RWA tokens: ContinuousPriceOracle (price accrues at a continuously compounded yearly rate, with an optional scheduled next rate) and ScheduledOracleSwitch (forwards reads from an old oracle to a new one at a fixed cutover timestamp). |
 
 Shared infrastructure (RWAHub base contracts, pricing, KYC client, interfaces)
 and vendored third-party dependencies (`contracts/external/`) are included as
@@ -39,8 +40,10 @@ can be checked byte-for-byte against on-chain verified contracts (e.g. with
 
 Files are licensed per their SPDX header. Ondo-authored contracts are licensed
 under the Business Source License 1.1 (see `LICENSE`). `contracts/external/`
-contains third-party code (OpenZeppelin, Chainlink, Circle, and others) under
-their original MIT/Apache-2.0 licenses with headers preserved.
+contains third-party code (OpenZeppelin, Chainlink, Circle, M^0, and others)
+under their original licenses with headers preserved: OpenZeppelin files are MIT,
+and `contracts/external/m0/ContinuousIndexingMath.sol` is GPL-3.0. Each file's
+own header applies.
 
 ## Security
 
