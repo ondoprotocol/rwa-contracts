@@ -38,12 +38,18 @@ abstract contract AbstractRWAOracleWrapper is Ownable2Step, IRWAOracleWrapper {
 
   /// Error emitted when attempting to set the oracle address to the zero address
   error InvalidOracleAddress();
+  /// Error emitted when attempting to set the admin address to the zero address
+  error InvalidAdminAddress();
+  /// Error emitted when attempting to renounce ownership
+  error RenounceOwnershipDisabled();
 
   /**
    * @param  admin      The address of the admin
    * @param  _rwaOracle The address of the RWA oracle
    */
   constructor(address admin, address _rwaOracle) {
+    if (admin == address(0)) revert InvalidAdminAddress();
+    if (_rwaOracle == address(0)) revert InvalidOracleAddress();
     _transferOwnership(admin);
     rwaOracle = _rwaOracle;
   }
@@ -70,5 +76,10 @@ abstract contract AbstractRWAOracleWrapper is Ownable2Step, IRWAOracleWrapper {
     emit OracleSet(rwaOracle, _rwaOracle);
 
     rwaOracle = _rwaOracle;
+  }
+
+  /// Disabled, ownership can only be transferred
+  function renounceOwnership() public view override onlyOwner {
+    revert RenounceOwnershipDisabled();
   }
 }
