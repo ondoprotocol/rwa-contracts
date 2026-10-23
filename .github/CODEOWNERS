@@ -1,8 +1,7 @@
-# Code owners for rwa-contracts.
+# ===========================================
+# CODEOWNERS - Ondo RWA Contracts Repository
+# ===========================================
 #
-# Listed owners are automatically requested for review on matching paths.
-# When the "main" branch ruleset has "Require review from Code Owners"
-# enabled, every change to these paths needs sign-off from
-# @ondoprotocol/eng-blockchain before it can merge.
+# Enforcement requires "Require review from Code Owners" on the branch protection rule.
 
 * @ondoprotocol/eng-blockchain
