@@ -1,0 +1,7 @@
+# ===========================================
+# CODEOWNERS - Ondo RWA Contracts Repository
+# ===========================================
+#
+# Enforcement requires "Require review from Code Owners" on the branch protection rule.
+
+* @ondoprotocol/eng-blockchain
